@@ -22,8 +22,7 @@ class MainViewModel(
     fun searchItem() {
         viewModelScope.launch {
             try {
-                _itemList.value = gitHubRepository.getGitHubRepository(inputText.value ?: "", 10, 1)
-                Log.d(TAG, "success")
+                _itemList.value = gitHubRepository.getGitHubRepository(inputText.value ?: "")
             } catch (e: Exception) {
                 Log.d(TAG, e.toString())
             }

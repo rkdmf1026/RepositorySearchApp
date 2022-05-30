@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.repositorysearchapp.databinding.ActivityMainBinding
 import com.example.repositorysearchapp.main.GitHubAdapter
 import com.example.repositorysearchapp.main.MainViewModel
+import com.example.repositorysearchapp.network.dto.Item
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeItemList() {
         viewModel.itemList.observe(this) { itemList ->
-            gitHubAdapter.submitList(itemList)
+            val copyList = itemList.toMutableList()
+            copyList.add(Item())
+            gitHubAdapter.submitList(copyList)
         }
     }
 }

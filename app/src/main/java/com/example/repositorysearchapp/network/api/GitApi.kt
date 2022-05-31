@@ -1,4 +1,4 @@
-package com.example.repositorysearchapp.network
+package com.example.repositorysearchapp.network.api
 
 import com.example.repositorysearchapp.network.dto.ItemListResponse
 import retrofit2.http.GET

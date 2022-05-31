@@ -1,14 +1,14 @@
-package com.example.repositorysearchapp.network
+package com.example.repositorysearchapp.network.repository
 
-import android.util.Log
+import com.example.repositorysearchapp.network.RetrofitBuilder
 import com.example.repositorysearchapp.network.dto.Item
 
 class GitHubRepository {
     private var name = ""
     private var pageNum = 1
     private val itemList = mutableListOf<Item>()
-    suspend fun getGitHubRepository(q: String): List<Item> {
-        if (name == q) {
+    suspend fun getGitHubRepository(q: String, type: Int): List<Item> {
+        if (name == q && type == PAGING) {
             pageNum++
         } else {
             name = q
@@ -27,5 +27,7 @@ class GitHubRepository {
 
     companion object {
         const val PER_PAGE = 10
+        const val SEARCH = 0
+        const val PAGING = 1
     }
 }

@@ -27,7 +27,6 @@
             android:paddingStart="20dp"
             android:paddingEnd="50dp"
             android:text="@={mainViewModel.inputText}"
-            android:textColorHint="#a3a3a3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

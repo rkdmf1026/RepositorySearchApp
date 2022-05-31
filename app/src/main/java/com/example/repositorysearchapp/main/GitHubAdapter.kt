@@ -11,7 +11,6 @@ import com.example.repositorysearchapp.databinding.ItemRepositotyBinding
 import com.example.repositorysearchapp.network.dto.Item
 
 class GitHubAdapter() : ListAdapter<Item, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
-    private val itemList = mutableListOf<Item>()
 
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position).full_name) {

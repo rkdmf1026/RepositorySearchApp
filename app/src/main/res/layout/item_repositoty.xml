@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,25 +25,31 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:ellipsize="marquee"
+            android:maxLines="1"
+            android:singleLine="true"
             android:text="@{item.full_name}"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_language"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toTopOf="@+id/iv_avatar"
             tools:text="@string/repository_name" />
 
         <TextView
             android:id="@+id/tv_language"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@{item.language}"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
             tools:text="@string/repository_language" />

@@ -18,14 +18,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setViewModel()
         binding.rvGithub.adapter = gitHubAdapter
+        setViewModel()
         observeItemList()
     }
 
     private fun setViewModel() {
-        binding.mainViewModel = viewModel
-        binding.lifecycleOwner = this
+        binding.apply {
+            mainViewModel = viewModel
+            lifecycleOwner = this@MainActivity
+        }
     }
 
     private fun observeItemList() {

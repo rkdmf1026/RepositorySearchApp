@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.repositorysearchapp.network.GitHubRepository
 import com.example.repositorysearchapp.network.dto.Item
+import com.example.repositorysearchapp.network.repository.GitHubRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel(
@@ -19,10 +19,10 @@ class MainViewModel(
 
     val inputText = MutableLiveData<String>()
 
-    fun searchItem() {
+    fun searchItem(type: Int) {
         viewModelScope.launch {
             try {
-                _itemList.value = gitHubRepository.getGitHubRepository(inputText.value ?: "")
+                _itemList.value = gitHubRepository.getGitHubRepository(inputText.value ?: "", type)
             } catch (e: Exception) {
                 Log.d(TAG, e.toString())
             }

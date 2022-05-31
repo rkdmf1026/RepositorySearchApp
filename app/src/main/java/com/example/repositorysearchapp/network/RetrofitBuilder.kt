@@ -1,5 +1,6 @@
 package com.example.repositorysearchapp.network
 
+import com.example.repositorysearchapp.network.api.GitApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

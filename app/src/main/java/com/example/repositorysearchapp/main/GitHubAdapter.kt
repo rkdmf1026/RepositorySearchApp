@@ -59,6 +59,7 @@ class GitHubAdapter() : ListAdapter<Item, RecyclerView.ViewHolder>(DIFF_CALLBACK
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Item) {
             binding.item = item
+            binding.tvName.isSelected = true
             Glide.with(binding.ivAvatar)
                 .load(item.owner.avatar_url)
                 .into(binding.ivAvatar)
